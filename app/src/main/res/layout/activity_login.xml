@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightColor"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context="com.onclick.angie.oneclick_v20.LoginActivity">
+
+    <ImageView
+        android:id="@+id/oneclick_logo"
+        android:layout_width="230dp"
+        android:layout_height="190dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/oneclick" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/oneclick_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="arial"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:text="OneCLICK LOG IN"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/edit_text_style"
+            android:fontFamily="arial"
+            android:gravity="center"
+            android:hint="Username"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_style"
+            android:ems="10"
+            android:fontFamily="arial"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="redirectLogin"
+            android:text="Log In"
+            android:textAllCaps="true"
+            android:textColor="#E8F5E9" />
+
+        <TextView
+            android:id="@+id/alt"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:onClick="redirectAlt"
+            android:text="No account yet? Create one"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
