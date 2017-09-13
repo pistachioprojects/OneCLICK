@@ -1,12 +1,13 @@
 package com.onclick.angie.oneclick_v20;
 
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -17,11 +18,14 @@ public class SignUpActivity extends AppCompatActivity {
     EditText studentPass;
     EditText studentConfPass;
 
+    DatabaseReference databaseStudents;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        databaseStudents = FirebaseDatabase.getInstance().getReference("students");
     }
 
     public void studentSignUp(View view){
@@ -38,6 +42,16 @@ public class SignUpActivity extends AppCompatActivity {
 
         if(valid){
             if(studentPass.getText().toString().equals(studentConfPass.getText().toString())){
+
+                String fname = studentFName.getText().toString();
+                String lname = studentLName.getText().toString();
+                String email = studentEmail.getText().toString();
+                String uname = studentUserName.getText().toString();
+                String pass = studentPass.getText().toString();
+
+                String id = databaseStudents.push().getKey();
+                StudentInfo student = new StudentInfo(id, fname, lname, email, uname, pass);
+                databaseStudents.child(id).setValue(student);
                 toasterMessage("Successful Sign-Up!");
             }
             else{
@@ -65,5 +79,4 @@ public class SignUpActivity extends AppCompatActivity {
     public void toasterMessage(String message){
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
-
 }
