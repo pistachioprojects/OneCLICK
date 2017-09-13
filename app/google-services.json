@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "524830686557",
+    "firebase_url": "https://oneclick-2ca2a.firebaseio.com",
+    "project_id": "oneclick-2ca2a",
+    "storage_bucket": "oneclick-2ca2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524830686557:android:7b9611fa4e594378",
+        "android_client_info": {
+          "package_name": "com.onclick.angie.oneclick_v20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524830686557-pr3b6pd0fvvmppc7167o8f7eucte60ds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onclick.angie.oneclick_v20",
+            "certificate_hash": "2a155f34f2fc5a9a5e460211f3365c8b573787b3"
+          }
+        },
+        {
+          "client_id": "524830686557-52f8sfet7ec9h594jlj0j406nkugvqln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxfn57VzokjTPfa2tEeUuxQEd-mpVR6RY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524830686557-52f8sfet7ec9h594jlj0j406nkugvqln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
