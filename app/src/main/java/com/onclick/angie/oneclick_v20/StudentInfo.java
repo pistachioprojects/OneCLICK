@@ -10,20 +10,16 @@ public class StudentInfo {
     String studFName;
     String studLName;
     String studEmail;
-    String studUName;
-    String studPass;
 
     public StudentInfo(){
 
     }
 
-    public StudentInfo(String studId, String studFName, String studLName, String studEmail, String studUName, String studPass) {
+    public StudentInfo(String studId, String studFName, String studLName, String studEmail) {
         this.studId = studId;
         this.studFName = studFName;
         this.studLName = studLName;
         this.studEmail = studEmail;
-        this.studUName = studUName;
-        this.studPass = studPass;
     }
 
     public String getStudId() {
@@ -40,14 +36,6 @@ public class StudentInfo {
 
     public String getStudEmail() {
         return studEmail;
-    }
-
-    public String getStudUName() {
-        return studUName;
-    }
-
-    public String getStudPass() {
-        return studPass;
     }
 
 }
