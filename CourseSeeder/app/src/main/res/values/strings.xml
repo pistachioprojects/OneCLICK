@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OneCLICK</string>
+
+    <string-array name="availability">
+        <item>Not Offered this Semester</item>
+        <item>Offered this Semester</item>
+    </string-array>
+</resources>

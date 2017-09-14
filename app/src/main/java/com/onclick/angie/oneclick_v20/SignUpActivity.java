@@ -36,9 +36,6 @@ public class SignUpActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseStudents = FirebaseDatabase.getInstance().getReference("students");
-    }
-
-    public void studentSignUp(View view){
 
         studentFName = (EditText) findViewById(R.id.student_fname);
         studentLName = (EditText) findViewById(R.id.student_lname);
@@ -46,6 +43,9 @@ public class SignUpActivity extends AppCompatActivity {
 
         studentPass = (EditText) findViewById(R.id.student_password);
         studentConfPass = (EditText) findViewById(R.id.student_confpassword);
+    }
+
+    public void studentSignUp(View view){
 
         boolean valid = validateForm(new EditText[] {studentFName, studentLName, studentEmail, studentPass, studentConfPass});
 

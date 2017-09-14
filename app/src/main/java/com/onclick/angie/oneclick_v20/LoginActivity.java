@@ -47,9 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         String pass = password.getText().toString();
 
         if (!uname.equals("") && !pass.equals("")) {
-            /*Intent login = new Intent(this, StudentHome.class);
-            startActivity(login);
-            finish();*/
             firebaseAuth.signInWithEmailAndPassword(uname, pass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
