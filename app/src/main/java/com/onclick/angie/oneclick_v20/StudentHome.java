@@ -12,7 +12,11 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentHome extends AppCompatActivity implements CourseItemAdapter.ClickListener {
+public class StudentHome extends AppCompatActivity{
+
+    FirebaseClient firebaseClient;
+
+    private String dbChild;
 
     private RecyclerView grade11Recycler;
     private CourseItemAdapter grade11Adapter;
@@ -39,21 +43,30 @@ public class StudentHome extends AppCompatActivity implements CourseItemAdapter.
         LinearLayoutManager tLinearLayout = new LinearLayoutManager(this);
         tLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         grade11Recycler.setLayoutManager(tLinearLayout);
-        grade11Adapter = new CourseItemAdapter(this, getGrade11CourseData());
-        grade11Adapter.setClickListenerGrade11(this);
-        grade11Recycler.setAdapter(grade11Adapter);
+    //    grade11Adapter = new CourseItemAdapter(this, getGrade11CourseData());
+    //    grade11Adapter.setClickListenerGrade11(this);
+    //    grade11Recycler.setAdapter(grade11Adapter);
+        dbChild = "grade11courses";
+
+        firebaseClient = new FirebaseClient(this, dbChild, grade11Recycler);
+        firebaseClient.refreshData();
+
 
         grade12Recycler = (RecyclerView) findViewById(R.id.grade12_courses);
         grade12Recycler.setHasFixedSize(true);
         LinearLayoutManager nLinearLayout = new LinearLayoutManager(this);
         nLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         grade12Recycler.setLayoutManager(nLinearLayout);
-        grade12Adapter = new CourseItemAdapter(this, getGrade12CourseData());
-        grade12Adapter.setClickListenerGrade12(this);
-        grade12Recycler.setAdapter(grade12Adapter);
+    //    grade12Adapter = new CourseItemAdapter(this, getGrade12CourseData());
+    //    grade12Adapter.setClickListenerGrade12(this);
+    //    grade12Recycler.setAdapter(grade12Adapter);
+        dbChild = "grade11courses";
+
+        firebaseClient = new FirebaseClient(this, dbChild, grade12Recycler);
+        firebaseClient.refreshData();
     }
 
-    private List<CourseItem> getGrade11CourseData() {
+    /*private List<CourseItem> getGrade11CourseData() {
         List<CourseItem> data = new ArrayList<>();
         int[] icons = {R.drawable.language, R.drawable.philosophy, R.drawable.science};
         String[] titles = {"Language", "Philosophy", "Science"};
@@ -79,10 +92,10 @@ public class StudentHome extends AppCompatActivity implements CourseItemAdapter.
             data.add(current);
         }
         return data;
-    }
+    }*/
 
-    @Override
-    public void itemClickGrade11(View view, int position) {
+    //@Override
+    /*public void itemClickGrade11(View view, int position) {
         if(position == 0){
             startActivity(new Intent(this, StudentGrade11.class));
         }
@@ -95,7 +108,7 @@ public class StudentHome extends AppCompatActivity implements CourseItemAdapter.
     public void itemClickGrade12(View view, int position) {
         startActivity(new Intent(this, StudentHome.class));
     }
-
+    */
     public void redirectGrade11 (View view){
         startActivity(new Intent(this, StudentGrade11.class));
     }

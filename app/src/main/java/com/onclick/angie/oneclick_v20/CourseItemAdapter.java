@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,17 +16,17 @@ import java.util.List;
  * Created by Angie on 8/27/2017.
  */
 
-public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.CourseViewHolder> {
+public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.CourseItemViewHolder> {
 
-    List<CourseItem> data = Collections.emptyList();
-    private LayoutInflater inflater;
+    Context context;
+    ArrayList<CourseItem> courseItems;
 
     private ClickListener clickListenerGrade11;
     private ClickListener clickListenerGrade12;
 
-    public CourseItemAdapter (Context context, List<CourseItem> data) {
-        inflater = LayoutInflater.from(context);
-        this.data = data;
+    public CourseItemAdapter(Context context, ArrayList<CourseItem> courseItems) {
+        this.context = context;
+        this.courseItems = courseItems;
     }
 
 
@@ -39,30 +40,29 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
 
 
     @Override
-    public CourseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.course_item, parent, false);
-        CourseViewHolder holder = new CourseViewHolder(view);
+    public CourseItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_item, parent, false);
+        CourseItemViewHolder holder = new CourseItemViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(CourseViewHolder holder, int position) {
-        CourseItem current = data.get(position);
-        holder.title.setText(current.courseTitle);
-        holder.screenshot.setImageResource(current.imageId);
+    public void onBindViewHolder(CourseItemViewHolder holder, int position) {
+        holder.title.setText(courseItems.get(position).getCrsTitle());
+        PicassoClient.downloadImage(context, courseItems.get(position).getCrsImg(), holder.screenshot);
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return courseItems.size();
     }
 
-    public class CourseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class CourseItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView title;
         ImageView screenshot;
 
-        public CourseViewHolder(View itemView) {
+        public CourseItemViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             title = (TextView) itemView.findViewById(R.id.course_title);
