@@ -11,5 +11,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_student_signup">@string/title_activity_main</string>
+    <string name="title_activity_course_subject">CourseSubject</string>
 
 </resources>

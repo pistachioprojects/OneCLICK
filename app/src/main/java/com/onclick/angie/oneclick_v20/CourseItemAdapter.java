@@ -1,12 +1,14 @@
 package com.onclick.angie.oneclick_v20;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,21 +23,9 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
     Context context;
     ArrayList<CourseItem> courseItems;
 
-    private ClickListener clickListenerGrade11;
-    private ClickListener clickListenerGrade12;
-
     public CourseItemAdapter(Context context, ArrayList<CourseItem> courseItems) {
         this.context = context;
         this.courseItems = courseItems;
-    }
-
-
-    public void setClickListenerGrade11 (ClickListener clickListenerGrade11) {
-        this.clickListenerGrade11 = clickListenerGrade11;
-    }
-
-    public void setClickListenerGrade12 (ClickListener clickListenerGrade12) {
-        this.clickListenerGrade12 = clickListenerGrade12;
     }
 
 
@@ -50,6 +40,17 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
     public void onBindViewHolder(CourseItemViewHolder holder, int position) {
         holder.title.setText(courseItems.get(position).getCrsTitle());
         PicassoClient.downloadImage(context, courseItems.get(position).getCrsImg(), holder.screenshot);
+
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Toast.makeText(context, "YOU CLICKED "+courseItems.get(position).getCrsTitle(), Toast.LENGTH_SHORT).show();
+                final Intent intent = new Intent(context, CourseSubject.class);
+                context.startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
@@ -61,6 +62,7 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
 
         TextView title;
         ImageView screenshot;
+        ItemClickListener itemClickListener;
 
         public CourseItemViewHolder(View itemView) {
             super(itemView);
@@ -69,21 +71,18 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
             screenshot = (ImageView) itemView.findViewById(R.id.course_screenshot);
         }
 
+        public void setItemClickListener(ItemClickListener itemClickListener) {
+            this.itemClickListener = itemClickListener;
+        }
+
         @Override
         public void onClick(View v) {
-            if (clickListenerGrade11 != null) {
-                clickListenerGrade11.itemClickGrade11(v, getLayoutPosition());
-            }
-
-            if (clickListenerGrade12 != null) {
-                clickListenerGrade12.itemClickGrade12(v, getLayoutPosition());
-            }
+            itemClickListener.onClick(v, getAdapterPosition());
         }
     }
 
-    public interface ClickListener {
-        public void itemClickGrade11 (View view, int position);
-        public void itemClickGrade12 (View view, int position);
+    public interface ItemClickListener {
+        void onClick(View view, int position);
     }
 
 

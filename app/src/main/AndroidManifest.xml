@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.onclick.angie.oneclick_v20">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".StudentHome" />
         <activity android:name=".StudentGrade11" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".CourseSubject"></activity>
     </application>
 
 </manifest>
