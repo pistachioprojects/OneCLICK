@@ -130,7 +130,7 @@
             android:layout_margin="8dp"
             android:background="@color/colorPrimary"
             android:onClick="seedGrade11"
-            android:text="Register Course Grade 11"
+            android:text="Seed Course Grade 11"
             android:textAllCaps="true"
             android:textColor="#E8F5E9" />
 
@@ -141,7 +141,7 @@
             android:layout_margin="8dp"
             android:background="@color/colorPrimary"
             android:onClick="seedGrade12"
-            android:text="Register Course Grade 12"
+            android:text="Seed Course Grade 12"
             android:textAllCaps="true"
             android:textColor="#E8F5E9" />
 

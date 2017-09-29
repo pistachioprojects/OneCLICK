@@ -38,13 +38,13 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
 
     @Override
     public void onBindViewHolder(CourseItemViewHolder holder, int position) {
-        holder.title.setText(courseItems.get(position).getCrsTitle());
-        PicassoClient.downloadImage(context, courseItems.get(position).getCrsImg(), holder.screenshot);
+        holder.title.setText(courseItems.get(position).getCourse_title());
+        PicassoClient.downloadImage(context, courseItems.get(position).getCourse_image_link(), holder.screenshot);
 
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(context, "YOU CLICKED "+courseItems.get(position).getCrsTitle(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "YOU CLICKED "+courseItems.get(position).getCourse_title(), Toast.LENGTH_SHORT).show();
                 final Intent intent = new Intent(context, CourseSubject.class);
                 context.startActivity(intent);
             }

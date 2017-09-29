@@ -37,18 +37,17 @@ public class StudentHome extends AppCompatActivity{
         LinearLayoutManager tLinearLayout = new LinearLayoutManager(this);
         tLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         grade11Recycler.setLayoutManager(tLinearLayout);
-        dbChild = "grade11courses";
+        dbChild = "Grade11_Courses";
 
         firebaseClient = new FirebaseClient(this, dbChild, grade11Recycler);
         firebaseClient.refreshData();
-
 
         grade12Recycler = (RecyclerView) findViewById(R.id.grade12_courses);
         grade12Recycler.setHasFixedSize(true);
         LinearLayoutManager nLinearLayout = new LinearLayoutManager(this);
         nLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         grade12Recycler.setLayoutManager(nLinearLayout);
-        dbChild = "grade11courses";
+        dbChild = "Grade12_Courses";
 
         firebaseClient = new FirebaseClient(this, dbChild, grade12Recycler);
         firebaseClient.refreshData();

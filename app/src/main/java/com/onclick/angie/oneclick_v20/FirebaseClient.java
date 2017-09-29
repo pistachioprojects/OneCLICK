@@ -55,8 +55,8 @@ public class FirebaseClient {
         courseItems.clear();
         for(DataSnapshot ds : dataSnapshot.getChildren()){
             CourseItem course = new CourseItem();
-            course.setCrsTitle(ds.getValue(CourseItem.class).getCrsTitle());
-            course.setCrsImg(ds.getValue(CourseItem.class).getCrsImg());
+            course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+            course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
 
             courseItems.add(course);
         }

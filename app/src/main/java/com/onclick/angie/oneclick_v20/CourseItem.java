@@ -6,25 +6,25 @@ package com.onclick.angie.oneclick_v20;
 
 public class CourseItem {
 
-    private String crsImg;
-    private String crsTitle;
+    private String course_image_link;
+    private String course_title;
 
     public CourseItem() {
     }
 
-    public String getCrsImg() {
-        return crsImg;
+    public String getCourse_image_link() {
+        return course_image_link;
     }
 
-    public void setCrsImg(String crsImg) {
-        this.crsImg = crsImg;
+    public void setCourse_image_link(String course_image_link) {
+        this.course_image_link = course_image_link;
     }
 
-    public String getCrsTitle() {
-        return crsTitle;
+    public String getCourse_title() {
+        return course_title;
     }
 
-    public void setCrsTitle(String crsTitle) {
-        this.crsTitle = crsTitle;
+    public void setCourse_title(String course_title) {
+        this.course_title = course_title;
     }
 }

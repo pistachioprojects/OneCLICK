@@ -5,53 +5,52 @@ package com.onclick.angie.courseseeder;
  */
 
 public class CourseInfo {
-    String crsId;
-    String crsTitle;
-    String crsDesc;
-    String crsImg;
-    String crsVidlink;
-    int crsEcount;
-    String crsAvail;
+    String course_id;
+    String course_title;
+    String course_description;
+    String course_image_link;
+    String course_video_id;
+    String course_availability;
+    String course_branch;
 
     public CourseInfo(){
-
     }
 
-    public CourseInfo(String crsId, String crsTitle, String crsDesc, String crsImg, String crsVidlink, int crsEcount, String crsAvail) {
-        this.crsId = crsId;
-        this.crsTitle = crsTitle;
-        this.crsDesc = crsDesc;
-        this.crsImg = crsImg;
-        this.crsVidlink = crsVidlink;
-        this.crsEcount = crsEcount;
-        this.crsAvail = crsAvail;
+    public CourseInfo(String course_id, String course_title, String course_description, String course_image_link, String course_video_id, String course_availability, String course_branch) {
+        this.course_id = course_id;
+        this.course_title = course_title;
+        this.course_description = course_description;
+        this.course_image_link = course_image_link;
+        this.course_video_id = course_video_id;
+        this.course_availability = course_availability;
+        this.course_branch = course_branch;
     }
 
-    public String getCrsId() {
-        return crsId;
+    public String getCourse_id() {
+        return course_id;
     }
 
-    public String getCrsTitle() {
-        return crsTitle;
+    public String getCourse_title() {
+        return course_title;
     }
 
-    public String getCrsDesc() {
-        return crsDesc;
+    public String getCourse_description() {
+        return course_description;
     }
 
-    public String getCrsImg() {
-        return crsImg;
+    public String getCourse_image_link() {
+        return course_image_link;
     }
 
-    public String getCrsVidlink() {
-        return crsVidlink;
+    public String getCourse_video_id() {
+        return course_video_id;
     }
 
-    public int getCrsEcount() {
-        return crsEcount;
+    public String getCourse_availability() {
+        return course_availability;
     }
 
-    public String getCrsAvail() {
-        return crsAvail;
+    public String getCourse_branch() {
+        return course_branch;
     }
 }

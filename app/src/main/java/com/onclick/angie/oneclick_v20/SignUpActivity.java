@@ -35,7 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        databaseStudents = FirebaseDatabase.getInstance().getReference("students");
+        databaseStudents = FirebaseDatabase.getInstance().getReference("Students");
 
         studentFName = (EditText) findViewById(R.id.student_fname);
         studentLName = (EditText) findViewById(R.id.student_lname);
