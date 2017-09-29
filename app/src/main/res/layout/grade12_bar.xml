@@ -5,10 +5,6 @@
 
     android:id="@+id/grade12_bar">
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:background="@color/lightGray" />
 
     <RelativeLayout
         android:layout_width="wrap_content"

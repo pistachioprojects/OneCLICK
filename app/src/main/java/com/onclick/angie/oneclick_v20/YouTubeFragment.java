@@ -13,31 +13,17 @@ import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 
 public class YouTubeFragment extends YouTubePlayerSupportFragment implements YouTubePlayer.OnInitializedListener {
 
-    private static final String vidIdKey = "W4hTJybfU7s";
+    private static final int RECOVERY_DIALOG_REQUEST = 1;
+    private static final String vidIdKey = null;
     private String mVideoId;
 
     public YouTubeFragment() {}
 
-    public static YouTubeFragment newInstance(final String videoId) {
-        final YouTubeFragment youTubeFragment = new YouTubeFragment();
-        final Bundle bundle = new Bundle();
-        bundle.putString(vidIdKey, videoId);
-        youTubeFragment.setArguments(bundle);
-        return youTubeFragment;
-    }
-
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        final Bundle arguments = getArguments();
-
-        if (bundle != null && bundle.containsKey(vidIdKey)) {
-            mVideoId = bundle.getString(vidIdKey);
-        } else if (arguments != null && arguments.containsKey(vidIdKey)) {
-            mVideoId = arguments.getString(vidIdKey);
-        }
-
         initialize(YouTubeConfig.getApiKey(), this);
+
     }
 
     /**
@@ -64,7 +50,7 @@ public class YouTubeFragment extends YouTubePlayerSupportFragment implements You
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
         if (youTubeInitializationResult.isUserRecoverableError()) {
-
+            youTubeInitializationResult.getErrorDialog(getActivity(), RECOVERY_DIALOG_REQUEST).show();
         } else {
             //Handle the failure
             Toast.makeText(getActivity(), "ERROR", Toast.LENGTH_LONG).show();

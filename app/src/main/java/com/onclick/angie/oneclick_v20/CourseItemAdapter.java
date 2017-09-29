@@ -3,6 +3,7 @@ package com.onclick.angie.oneclick_v20;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
 
     Context context;
     ArrayList<CourseItem> courseItems;
+
 
     public CourseItemAdapter(Context context, ArrayList<CourseItem> courseItems) {
         this.context = context;
@@ -44,8 +46,13 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(context, "YOU CLICKED "+courseItems.get(position).getCourse_title(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, courseItems.get(position).getCourse_title()+"-"+courseItems.get(position), Toast.LENGTH_LONG).show();
                 final Intent intent = new Intent(context, CourseSubject.class);
+                intent.putExtra("course_id", courseItems.get(position).getCourse_id());
+                intent.putExtra("course_title", courseItems.get(position).getCourse_title());
+                intent.putExtra("course_video", courseItems.get(position).getCourse_video_id());
+                intent.putExtra("course_description", courseItems.get(position).getCourse_description());
+
                 context.startActivity(intent);
             }
         });

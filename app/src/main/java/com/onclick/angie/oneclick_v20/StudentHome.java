@@ -39,7 +39,7 @@ public class StudentHome extends AppCompatActivity{
         grade11Recycler.setLayoutManager(tLinearLayout);
         dbChild = "Grade11_Courses";
 
-        firebaseClient = new FirebaseClient(this, dbChild, grade11Recycler);
+        firebaseClient = new FirebaseClient(this, dbChild, grade11Recycler, "StudentHome");
         firebaseClient.refreshData();
 
         grade12Recycler = (RecyclerView) findViewById(R.id.grade12_courses);
@@ -49,7 +49,7 @@ public class StudentHome extends AppCompatActivity{
         grade12Recycler.setLayoutManager(nLinearLayout);
         dbChild = "Grade12_Courses";
 
-        firebaseClient = new FirebaseClient(this, dbChild, grade12Recycler);
+        firebaseClient = new FirebaseClient(this, dbChild, grade12Recycler, "StudentHome");
         firebaseClient.refreshData();
     }
 
