@@ -1,6 +1,7 @@
 package com.onclick.angie.oneclick_v20;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,39 +19,50 @@ import java.util.List;
 
 public class CourseItemShowAdapter extends RecyclerView.Adapter<CourseItemShowAdapter.AllCourseViewHolder>{
 
-    List<CourseItemShow> data = Collections.emptyList();
-    private LayoutInflater inflater;
+    Context context;
+    ArrayList<CourseItem> courseItems;
 
-    private ClickListener clickListener;
 
-    public CourseItemShowAdapter (Context context, List<CourseItemShow> data) {
-        inflater = LayoutInflater.from(context);
-        this.data = data;
+    public CourseItemShowAdapter (Context context, ArrayList<CourseItem> courseItems) {
+        this.context = context;
+        this.courseItems = courseItems;
     }
 
-    public void setClickListener (ClickListener clickListener) {
-        this.clickListener = clickListener;
-    }
 
     @Override
     public AllCourseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.course_show_item, parent, false);
-        AllCourseViewHolder holder = new AllCourseViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_show_item, parent, false);
+        CourseItemShowAdapter.AllCourseViewHolder holder = new CourseItemShowAdapter.AllCourseViewHolder(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(AllCourseViewHolder holder, int position) {
-        CourseItemShow current = data.get(position);
-        holder.screenshot.setImageResource(current.imageId);
-        holder.title.setText(current.courseTitle);
-        holder.sDescription.setText(current.shortDescription);
-        holder.user.setText(current.userAvailability);
+
+        holder.title.setText(courseItems.get(position).getCourse_title());
+        holder.sDescription.setText(courseItems.get(position).getCourse_description());
+        holder.avail.setText(courseItems.get(position).getCourse_availability());
+        PicassoClient.downloadImage(context, courseItems.get(position).getCourse_image_link(), holder.screenshot);
+
+        holder.setItemClickListener(new CourseItemAdapter.ItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                //Toast.makeText(context, courseItems.get(position).getCourse_title()+"-"+courseItems.get(position), Toast.LENGTH_LONG).show();
+                final Intent intent = new Intent(context, CourseSubject.class);
+                intent.putExtra("course_id", courseItems.get(position).getCourse_id());
+                intent.putExtra("course_title", courseItems.get(position).getCourse_title());
+                intent.putExtra("course_video", courseItems.get(position).getCourse_video_id());
+                intent.putExtra("course_description", courseItems.get(position).getCourse_description());
+
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return courseItems.size();
     }
 
     public class AllCourseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -57,7 +70,8 @@ public class CourseItemShowAdapter extends RecyclerView.Adapter<CourseItemShowAd
         ImageView screenshot;
         TextView title;
         TextView sDescription;
-        TextView user;
+        TextView avail;
+        CourseItemAdapter.ItemClickListener itemClickListener;
 
         public AllCourseViewHolder(View itemView) {
             super(itemView);
@@ -65,19 +79,21 @@ public class CourseItemShowAdapter extends RecyclerView.Adapter<CourseItemShowAd
             screenshot = (ImageView) itemView.findViewById(R.id.course_all_image);
             title = (TextView) itemView.findViewById(R.id.course_all_title);
             sDescription = (TextView) itemView.findViewById(R.id.course_all_shortdesc);
-            user = (TextView) itemView.findViewById(R.id.course_all_availuser);
+            avail = (TextView) itemView.findViewById(R.id.course_all_availuser);
+        }
+
+        public void setItemClickListener(CourseItemAdapter.ItemClickListener itemClickListener) {
+            this.itemClickListener = itemClickListener;
         }
 
         @Override
         public void onClick(View v) {
-            if (clickListener != null) {
-                clickListener.itemClick(v, getLayoutPosition());
-            }
+            itemClickListener.onClick(v, getAdapterPosition());
         }
     }
 
-    public interface ClickListener {
-        public void itemClick (View view, int position);
+    public interface ItemClickListener {
+        void onClick(View view, int position);
     }
 
 }

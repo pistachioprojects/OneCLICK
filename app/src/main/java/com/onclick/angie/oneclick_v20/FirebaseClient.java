@@ -23,6 +23,7 @@ public class FirebaseClient {
     String dbChild;
     RecyclerView recycler;
     String invoker;
+    String invokerBranch;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -31,11 +32,12 @@ public class FirebaseClient {
     CourseItemAdapter itemAdapter;
     CourseItemShowAdapter itemShowAdapter;
 
-    public FirebaseClient(Context context, String dbChild, RecyclerView recycler, String invoker) {
+    public FirebaseClient(Context context, String dbChild, RecyclerView recycler, String invoker, String invokerBranch) {
         this.context = context;
         this.dbChild = dbChild;
         this.recycler = recycler;
         this.invoker = invoker;
+        this.invokerBranch = invokerBranch;
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference(this.dbChild);
@@ -51,6 +53,22 @@ public class FirebaseClient {
                         break;
                     case "StudentViewMore":
                         //Do Something
+                        switch (invokerBranch){
+                            case "STEM":
+                                getUpdatesStem(dataSnapshot);
+                                break;
+                            case "ABM":
+                                getUpdatesAbm(dataSnapshot);
+                                break;
+                            case "HUMSS":
+                                getUpdatesHumss(dataSnapshot);
+                                break;
+                            case "GAS":
+                                getUpdatesGas(dataSnapshot);
+                                break;
+                            default:
+                                break;
+                        }
                         break;
                     default:
                         break;
@@ -85,4 +103,101 @@ public class FirebaseClient {
             Toast.makeText(context, "NO DATA TO SHOW!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void getUpdatesStem(DataSnapshot dataSnapshot){
+        courseItems.clear();
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+            if(ds.getValue(CourseItem.class).getCourse_branch().equals("STEM")){
+                CourseItem course = new CourseItem();
+                course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
+                course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+                course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
+                course.setCourse_video_id(ds.getValue(CourseItem.class).getCourse_video_id());
+                course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+                course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                courseItems.add(course);
+            }
+        }
+
+        if(courseItems.size()>0){
+            itemShowAdapter = new CourseItemShowAdapter(context, courseItems);
+            recycler.setAdapter(itemShowAdapter);
+        }
+        else{
+            Toast.makeText(context, "NO DATA TO SHOW!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void getUpdatesAbm(DataSnapshot dataSnapshot){
+        courseItems.clear();
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+            if(ds.getValue(CourseItem.class).getCourse_branch().equals("ABM")){
+                CourseItem course = new CourseItem();
+                course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
+                course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+                course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
+                course.setCourse_video_id(ds.getValue(CourseItem.class).getCourse_video_id());
+                course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+                course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                courseItems.add(course);
+            }
+        }
+
+        if(courseItems.size()>0){
+            itemShowAdapter = new CourseItemShowAdapter(context, courseItems);
+            recycler.setAdapter(itemShowAdapter);
+        }
+        else{
+            Toast.makeText(context, "NO DATA TO SHOW!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void getUpdatesHumss(DataSnapshot dataSnapshot){
+        courseItems.clear();
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+            if(ds.getValue(CourseItem.class).getCourse_branch().equals("HUMSS")){
+                CourseItem course = new CourseItem();
+                course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
+                course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+                course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
+                course.setCourse_video_id(ds.getValue(CourseItem.class).getCourse_video_id());
+                course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+                course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                courseItems.add(course);
+            }
+        }
+
+        if(courseItems.size()>0){
+            itemShowAdapter = new CourseItemShowAdapter(context, courseItems);
+            recycler.setAdapter(itemShowAdapter);
+        }
+        else{
+            Toast.makeText(context, "NO DATA TO SHOW!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void getUpdatesGas(DataSnapshot dataSnapshot){
+        courseItems.clear();
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+            if(ds.getValue(CourseItem.class).getCourse_branch().equals("GAS")){
+                CourseItem course = new CourseItem();
+                course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
+                course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+                course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
+                course.setCourse_video_id(ds.getValue(CourseItem.class).getCourse_video_id());
+                course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+                course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                courseItems.add(course);
+            }
+        }
+
+        if(courseItems.size()>0){
+            itemShowAdapter = new CourseItemShowAdapter(context, courseItems);
+            recycler.setAdapter(itemShowAdapter);
+        }
+        else{
+            Toast.makeText(context, "NO DATA TO SHOW!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
