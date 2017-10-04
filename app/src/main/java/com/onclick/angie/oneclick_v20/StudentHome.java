@@ -1,13 +1,19 @@
 package com.onclick.angie.oneclick_v20;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +21,18 @@ import java.util.List;
 public class StudentHome extends AppCompatActivity{
 
     FirebaseClient firebaseClient;
+    FirebaseStudentClient firebaseStudentClient;
     private String dbChild;
     private RecyclerView grade11Recycler;
     private RecyclerView grade12Recycler;
     private Toolbar toolbar;
+
+    StudentInfo studentInfo;
+
+    private TextView studentName;
+
+    String TAG = "LOGIN ACTIVITY";
+    String userId, userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

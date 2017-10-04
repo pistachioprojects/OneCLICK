@@ -31,10 +31,13 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+
+
         /*if(firebaseAuth.getCurrentUser() != null){
             finish();
             startActivity(new Intent(this, StudentHome.class));
         }*/
+
 
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
@@ -53,6 +56,18 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 finish();
+
+                                /* Can be used for getting current user info
+                                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                                String userId = firebaseUser.getUid();
+                                String userEmail = firebaseUser.getEmail();
+                                Log.d("LOGIN","====================> "+" UserId : "+userId+" , UserEmail"+userEmail);
+
+                                Intent intent = new Intent(getApplicationContext(), StudentHome.class);
+                                intent.putExtra("student_id", userId);
+                                intent.putExtra("student_email", userEmail);
+                                getApplicationContext().startActivity(intent);*/
+
                                 startActivity(new Intent(getApplicationContext(), StudentHome.class));
                             }
                             else{

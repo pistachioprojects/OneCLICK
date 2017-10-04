@@ -13,6 +13,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -63,8 +64,9 @@ public class SignUpActivity extends AppCompatActivity {
                                     String fname = studentFName.getText().toString();
                                     String lname = studentLName.getText().toString();
                                     String email = studentEmail.getText().toString();
-                                    //Creates a unique id
-                                    String id = databaseStudents.push().getKey();
+                                    //Gets the id of the authentication to be the id of student in DB
+                                    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                                    String id = firebaseUser.getUid();
                                     //Creates one student
                                     StudentInfo student = new StudentInfo(id, fname, lname, email);
                                     //Saves the student into Firebase database

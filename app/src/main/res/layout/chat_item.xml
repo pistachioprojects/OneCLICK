@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/chat_item">
+
+    <TextView
+        android:id="@+id/chat_username"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="normal|bold"
+        android:text="sample@test.com">
+    </TextView>
+
+    <TextView
+        android:id="@+id/chat_timestamp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="normal"
+        android:text="10-4-2017"
+        android:layout_alignParentRight="true">
+    </TextView>
+
+    <TextView
+        android:id="@+id/chat_message"
+        android:layout_below="@id/chat_username"
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="This is a sample chat message.">
+    </TextView>
+</RelativeLayout>
