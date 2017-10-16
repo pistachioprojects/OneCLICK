@@ -9,25 +9,27 @@ public class CourseInfo {
     String course_title;
     String course_description;
     String course_image_link;
-    String course_video_id;
     String course_availability;
     String course_branch;
 
     public CourseInfo(){
     }
 
-    public CourseInfo(String course_id, String course_title, String course_description, String course_image_link, String course_video_id, String course_availability, String course_branch) {
+    public CourseInfo(String course_id, String course_title, String course_description, String course_image_link, String course_availability, String course_branch) {
         this.course_id = course_id;
         this.course_title = course_title;
         this.course_description = course_description;
         this.course_image_link = course_image_link;
-        this.course_video_id = course_video_id;
         this.course_availability = course_availability;
         this.course_branch = course_branch;
     }
 
     public String getCourse_id() {
         return course_id;
+    }
+
+    public void setCourse_id(String course_id) {
+        this.course_id = course_id;
     }
 
     public String getCourse_title() {
@@ -40,10 +42,6 @@ public class CourseInfo {
 
     public String getCourse_image_link() {
         return course_image_link;
-    }
-
-    public String getCourse_video_id() {
-        return course_video_id;
     }
 
     public String getCourse_availability() {

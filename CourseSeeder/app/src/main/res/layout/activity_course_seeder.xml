@@ -29,99 +29,8 @@
             android:textSize="20dp"
             android:gravity="center"/>
 
-        <EditText
-            android:id="@+id/crs_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/edit_text_style"
-            android:fontFamily="arial"
-            android:gravity="center"
-            android:hint="Course Title"
-            android:inputType="text"
-            android:maxLines="1"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/crs_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/edit_text_style"
-            android:fontFamily="arial"
-            android:gravity="center"
-            android:hint="Course Description"
-            android:inputType="text"
-            android:maxLines="1"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/crs_img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/edit_text_style"
-            android:fontFamily="arial"
-            android:gravity="center"
-            android:hint="Course Image Link"
-            android:inputType="text"
-            android:maxLines="1"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/crs_vidlink"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/edit_text_style"
-            android:ems="10"
-            android:fontFamily="arial"
-            android:gravity="center"
-            android:hint="Course Video Link"
-            android:inputType="text"
-            android:maxLines="1"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp"
-            android:textSize="16sp" />
 
 
-        <EditText
-            android:id="@+id/crs_enrolcnt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/edit_text_style"
-            android:ems="10"
-            android:fontFamily="arial"
-            android:gravity="center"
-            android:hint="Course Enrollee Count"
-            android:inputType="number"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp"
-            android:textSize="16sp" />
-
-        <Spinner
-            android:id="@+id/crs_avail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_margin="8dp"
-            android:entries="@array/availability"/>
 
         <Button
             android:id="@+id/seedg11"
@@ -142,6 +51,57 @@
             android:background="@color/colorPrimary"
             android:onClick="seedGrade12"
             android:text="Seed Course Grade 12"
+            android:textAllCaps="true"
+            android:textColor="#E8F5E9" />
+        <Button
+            android:id="@+id/seedg11lessons"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="seedGrade11Lessons"
+            android:text="Seed Course Grade 11 Lessons - CORE"
+            android:textAllCaps="true"
+            android:textColor="#E8F5E9" />
+
+        <Button
+            android:id="@+id/seedg11lessonsabm"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="seedGrade11LessonsAbm"
+            android:text="Seed Course Grade 11 Lessons - ABM"
+            android:textAllCaps="true"
+            android:textColor="#E8F5E9" />
+        <Button
+            android:id="@+id/seedg11lessonshumss"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="seedGrade11LessonsHumss"
+            android:text="Seed Course Grade 11 Lessons - HUMSS"
+            android:textAllCaps="true"
+            android:textColor="#E8F5E9" />
+        <Button
+            android:id="@+id/seedg11lessonsstem"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="seedGrade11LessonsStem"
+            android:text="Seed Course Grade 11 Lessons - STEM"
+            android:textAllCaps="true"
+            android:textColor="#E8F5E9" />
+        <Button
+            android:id="@+id/seedg11lessonsgas"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="seedGrade11LessonsGas"
+            android:text="Seed Course Grade 11 Lessons - GAS"
             android:textAllCaps="true"
             android:textColor="#E8F5E9" />
 

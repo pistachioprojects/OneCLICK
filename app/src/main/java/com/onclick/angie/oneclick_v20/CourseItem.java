@@ -10,7 +10,6 @@ public class CourseItem {
     private String course_image_link;
     private String course_title;
     private String course_description;
-    private String course_video_id;
     private String course_availability;
     private String course_branch;
 
@@ -47,14 +46,6 @@ public class CourseItem {
 
     public void setCourse_description(String course_description) {
         this.course_description = course_description;
-    }
-
-    public String getCourse_video_id() {
-        return course_video_id;
-    }
-
-    public void setCourse_video_id(String course_video_link) {
-        this.course_video_id = course_video_link;
     }
 
     public String getCourse_availability() {

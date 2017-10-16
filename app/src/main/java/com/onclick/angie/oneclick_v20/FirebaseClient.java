@@ -90,7 +90,6 @@ public class FirebaseClient {
             course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
             course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
             course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
-            course.setCourse_video_id(ds.getValue(CourseItem.class).getCourse_video_id());
             course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
             courseItems.add(course);
         }
@@ -112,7 +111,15 @@ public class FirebaseClient {
                 course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
                 course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
-                course.setCourse_video_id(ds.getValue(CourseItem.class).getCourse_video_id());
+                course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+                course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                courseItems.add(course);
+            }
+            else if(ds.getValue(CourseItem.class).getCourse_branch().equals("CORE")){
+                CourseItem course = new CourseItem();
+                course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
+                course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+                course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
                 courseItems.add(course);
@@ -136,12 +143,21 @@ public class FirebaseClient {
                 course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
                 course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
-                course.setCourse_video_id(ds.getValue(CourseItem.class).getCourse_video_id());
+                course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+                course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                courseItems.add(course);
+            }
+            else if(ds.getValue(CourseItem.class).getCourse_branch().equals("CORE")){
+                CourseItem course = new CourseItem();
+                course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
+                course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+                course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
                 courseItems.add(course);
             }
         }
+
 
         if(courseItems.size()>0){
             itemShowAdapter = new CourseItemShowAdapter(context, courseItems);
@@ -160,7 +176,15 @@ public class FirebaseClient {
                 course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
                 course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
-                course.setCourse_video_id(ds.getValue(CourseItem.class).getCourse_video_id());
+                course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+                course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                courseItems.add(course);
+            }
+            else if(ds.getValue(CourseItem.class).getCourse_branch().equals("CORE")){
+                CourseItem course = new CourseItem();
+                course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
+                course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+                course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
                 courseItems.add(course);
@@ -184,7 +208,15 @@ public class FirebaseClient {
                 course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
                 course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
-                course.setCourse_video_id(ds.getValue(CourseItem.class).getCourse_video_id());
+                course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+                course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                courseItems.add(course);
+            }
+            else if(ds.getValue(CourseItem.class).getCourse_branch().equals("CORE")){
+                CourseItem course = new CourseItem();
+                course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
+                course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+                course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
                 courseItems.add(course);

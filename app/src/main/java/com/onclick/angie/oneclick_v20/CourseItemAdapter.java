@@ -49,10 +49,6 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
                 //Toast.makeText(context, courseItems.get(position).getCourse_title()+"-"+courseItems.get(position), Toast.LENGTH_LONG).show();
                 final Intent intent = new Intent(context, CourseSubject.class);
                 intent.putExtra("course_id", courseItems.get(position).getCourse_id());
-                intent.putExtra("course_title", courseItems.get(position).getCourse_title());
-                intent.putExtra("course_video", courseItems.get(position).getCourse_video_id());
-                intent.putExtra("course_description", courseItems.get(position).getCourse_description());
-
                 context.startActivity(intent);
             }
         });
