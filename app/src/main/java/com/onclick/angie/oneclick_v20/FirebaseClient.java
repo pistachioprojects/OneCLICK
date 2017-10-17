@@ -47,9 +47,10 @@ public class FirebaseClient {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(com.google.firebase.database.DataSnapshot dataSnapshot) {
+                getUpdates(dataSnapshot);
                 switch (invoker){
                     case "StudentHome":
-                        getUpdates(dataSnapshot);
+
                         break;
                     case "StudentViewMore":
                         //Do Something
@@ -91,6 +92,7 @@ public class FirebaseClient {
             course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
             course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
             course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+            course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
             courseItems.add(course);
         }
 
@@ -113,6 +115,7 @@ public class FirebaseClient {
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
                 courseItems.add(course);
             }
             else if(ds.getValue(CourseItem.class).getCourse_branch().equals("CORE")){
@@ -122,6 +125,7 @@ public class FirebaseClient {
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
                 courseItems.add(course);
             }
         }
@@ -145,6 +149,7 @@ public class FirebaseClient {
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
                 courseItems.add(course);
             }
             else if(ds.getValue(CourseItem.class).getCourse_branch().equals("CORE")){
@@ -154,6 +159,7 @@ public class FirebaseClient {
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
                 courseItems.add(course);
             }
         }
@@ -178,6 +184,7 @@ public class FirebaseClient {
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
                 courseItems.add(course);
             }
             else if(ds.getValue(CourseItem.class).getCourse_branch().equals("CORE")){
@@ -187,6 +194,7 @@ public class FirebaseClient {
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
                 courseItems.add(course);
             }
         }
@@ -210,6 +218,7 @@ public class FirebaseClient {
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
                 courseItems.add(course);
             }
             else if(ds.getValue(CourseItem.class).getCourse_branch().equals("CORE")){
@@ -219,6 +228,7 @@ public class FirebaseClient {
                 course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
                 course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
                 course.setCourse_availability(ds.getValue(CourseItem.class).getCourse_availability());
+                course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
                 courseItems.add(course);
             }
         }

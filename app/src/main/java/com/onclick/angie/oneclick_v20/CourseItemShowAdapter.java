@@ -48,11 +48,10 @@ public class CourseItemShowAdapter extends RecyclerView.Adapter<CourseItemShowAd
             @Override
             public void onClick(View view, int position) {
                 //Toast.makeText(context, courseItems.get(position).getCourse_title()+"-"+courseItems.get(position), Toast.LENGTH_LONG).show();
-                final Intent intent = new Intent(context, CourseSubject.class);
+                final Intent intent = new Intent(context, CourseOutline.class);
                 intent.putExtra("course_id", courseItems.get(position).getCourse_id());
+                intent.putExtra("course_branch", courseItems.get(position).getCourse_branch());
                 intent.putExtra("course_title", courseItems.get(position).getCourse_title());
-                intent.putExtra("course_description", courseItems.get(position).getCourse_description());
-
                 context.startActivity(intent);
             }
         });

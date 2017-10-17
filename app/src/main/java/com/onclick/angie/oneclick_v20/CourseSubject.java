@@ -75,18 +75,17 @@ public class CourseSubject extends AppCompatActivity{
         //firebaseAuth = FirebaseAuth.getInstance();
 
         final Bundle bundle = getIntent().getExtras();
-        String crsId = bundle.getString("course_id");
-        String crsTitle = bundle.getString("course_title");
-        String crsVidId = bundle.getString("course_video");
-        String crsDesc = bundle.getString("course_description");
+        String lessonId = bundle.getString("lesson_id");
+        String lessonTitle = bundle.getString("lesson_description");
+        String lessonVidId = bundle.getString("lesson_video_id");
 
         //Log.d("COURSE SUBJECT", "=========================> "+crsId+","+crsTitle+","+crsVidId+","+crsDesc);
 
         final YouTubeFragment fragment = (YouTubeFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_youtube);
-        fragment.setVideoId(crsVidId);
+        fragment.setVideoId(lessonVidId);
 
         final TextView videoTitle = (TextView) findViewById(R.id.course_video_title);
-        videoTitle.setText(crsTitle);
+        videoTitle.setText(lessonTitle);
 
 
         //userEmail = firebaseAuth.getCurrentUser().getEmail();
