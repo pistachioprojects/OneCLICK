@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/lesson_drawer_layout"
-    android:orientation="vertical"
+    android:id="@+id/student_drawer_layout"
     tools:context="com.onclick.angie.oneclick_v20.CourseOutline">
 
     <RelativeLayout

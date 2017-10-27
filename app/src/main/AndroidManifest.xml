@@ -22,7 +22,7 @@
         <activity android:name=".StudentGrade11" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".CourseSubject" />
-        <activity android:name=".CourseOutline"></activity>
+        <activity android:name=".CourseOutline"/>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.onclick.angie.oneclick_v20;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
@@ -69,6 +70,14 @@ public class StudentHome extends AppCompatActivity{
 
     public void redirectGrade11 (View view){
         startActivity(new Intent(this, StudentGrade11.class));
+    }
+
+    public void showFaqInfo (View view){
+        Dialog faq = new Dialog(this);
+        faq.setTitle("Senior High School Information");
+        faq.setContentView(R.layout.faq_dialog);
+        faq.show();
+        faq.setCanceledOnTouchOutside(true);
     }
 
 }

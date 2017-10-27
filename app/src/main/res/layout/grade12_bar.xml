@@ -27,6 +27,17 @@
             android:layout_centerVertical="true">
 
             <Button
+                android:id="@+id/faq_grade12"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:text="\?"
+                android:textSize="12sp"
+                android:textColor="@color/lightColor"
+                android:background="@drawable/round_button"
+                android:layout_marginRight="8dp"
+                android:onClick="showFaqInfo"/>
+
+            <Button
                 android:id="@+id/view_more_grade12"
                 android:layout_width="wrap_content"
                 android:layout_height="32dp"

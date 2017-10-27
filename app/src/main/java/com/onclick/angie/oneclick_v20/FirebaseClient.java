@@ -47,10 +47,10 @@ public class FirebaseClient {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(com.google.firebase.database.DataSnapshot dataSnapshot) {
-                getUpdates(dataSnapshot);
+
                 switch (invoker){
                     case "StudentHome":
-
+                        getUpdates(dataSnapshot);
                         break;
                     case "StudentViewMore":
                         //Do Something
@@ -87,13 +87,16 @@ public class FirebaseClient {
     private void getUpdates(DataSnapshot dataSnapshot){
         courseItems.clear();
         for(DataSnapshot ds : dataSnapshot.getChildren()){
-            CourseItem course = new CourseItem();
-            course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
-            course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
-            course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
-            course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
-            course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
-            courseItems.add(course);
+            if(ds.getValue(CourseItem.class).getCourse_branch().equals("CORE")){
+                CourseItem course = new CourseItem();
+                course.setCourse_id(ds.getValue(CourseItem.class).getCourse_id());
+                course.setCourse_title(ds.getValue(CourseItem.class).getCourse_title());
+                course.setCourse_image_link(ds.getValue(CourseItem.class).getCourse_image_link());
+                course.setCourse_description(ds.getValue(CourseItem.class).getCourse_description());
+                course.setCourse_branch(ds.getValue(CourseItem.class).getCourse_branch());
+                courseItems.add(course);
+            }
+
         }
 
         if(courseItems.size()>0){

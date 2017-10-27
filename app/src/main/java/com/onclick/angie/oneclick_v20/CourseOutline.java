@@ -25,14 +25,14 @@ public class CourseOutline extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_outline);
 
-        /*
+
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
         StudentDrawer drawerFragment = (StudentDrawer)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_student_drawer);
-        drawerFragment.setUp(R.id.fragment_student_drawer, (DrawerLayout) findViewById(R.id.lesson_drawer_layout), toolbar);
-        */
+        drawerFragment.setUp(R.id.fragment_student_drawer, (DrawerLayout) findViewById(R.id.student_drawer_layout), toolbar);
+
 
         final Bundle bundle = getIntent().getExtras();
         String crsId = bundle.getString("course_id");
