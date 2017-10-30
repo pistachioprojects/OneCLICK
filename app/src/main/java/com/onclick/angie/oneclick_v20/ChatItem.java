@@ -10,14 +10,16 @@ public class ChatItem {
     private String chat_id;
     private String chat_email;
     private String chat_message;
+    private int chat_video_stamp;
     private long chat_time;
 
     public ChatItem() {
     }
 
-    public ChatItem(String chat_email, String chat_message) {
+    public ChatItem(String chat_email, String chat_message, int chat_video_stamp) {
         this.chat_email = chat_email;
         this.chat_message = chat_message;
+        this.chat_video_stamp = chat_video_stamp;
         chat_time = new Date().getTime();
     }
 
@@ -43,6 +45,14 @@ public class ChatItem {
 
     public void setChat_message(String chat_message) {
         this.chat_message = chat_message;
+    }
+
+    public int getChat_video_stamp() {
+        return chat_video_stamp;
+    }
+
+    public void setChat_video_stamp(int chat_video_stamp) {
+        this.chat_video_stamp = chat_video_stamp;
     }
 
     public long getChat_time() {

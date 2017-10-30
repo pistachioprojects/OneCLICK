@@ -16,6 +16,10 @@ public class YouTubeFragment extends YouTubePlayerSupportFragment implements You
     private static final int RECOVERY_DIALOG_REQUEST = 1;
     private static final String vidIdKey = null;
     private String mVideoId;
+    private int mVideoStamp;
+
+
+    private YouTubePlayer player;
 
     public YouTubeFragment() {}
 
@@ -24,6 +28,7 @@ public class YouTubeFragment extends YouTubePlayerSupportFragment implements You
         super.onCreate(bundle);
         initialize(YouTubeConfig.getApiKey(), this);
 
+
     }
 
     /**
@@ -31,20 +36,23 @@ public class YouTubeFragment extends YouTubePlayerSupportFragment implements You
      * This can be used when including the Fragment in an XML layout
      * @param videoId The ID of the video to play
      */
-    public void setVideoId(final String videoId) {
+    public void setVideoId(String videoId, int videoStamp) {
         mVideoId = videoId;
+        mVideoStamp = videoStamp;
         initialize(YouTubeConfig.getApiKey(), this);
     }
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean restored) {
-        if (mVideoId != null) {
-            if (restored) {
-                youTubePlayer.play();
-            } else {
-                youTubePlayer.loadVideo(mVideoId);
-            }
+        this.player = youTubePlayer;
+
+        if(restored){
+            player.play();
         }
+        else{
+            player.loadVideo(mVideoId, mVideoStamp);
+        }
+
     }
 
     @Override
@@ -62,5 +70,16 @@ public class YouTubeFragment extends YouTubePlayerSupportFragment implements You
         super.onSaveInstanceState(bundle);
         bundle.putString(vidIdKey, mVideoId);
     }
+
+
+    public void onRelease(){
+        player.release();
+    }
+    public void onSeekTo(String id, int time) {
+        //player.seekToMillis(time);
+        player.loadVideo(id, time);
+        //player.play();
+    }
+
 
 }
