@@ -143,7 +143,7 @@ public class CourseSubject extends AppCompatActivity{
                     }catch (NumberFormatException e){
                         Log.d("VIDEO TIME", "=========================> NOPE NOPE NOPE");
                     }
-                    videoTime = (hours*3600)+(minutes*60)+seconds;
+                    videoTime = ((hours*3600)+(minutes*60)+seconds)*1000;
                 }
                 else {
                     videoTime = 0;
@@ -175,7 +175,6 @@ public class CourseSubject extends AppCompatActivity{
                 chatTimestamp.setText(DateFormat.format("MMM dd, yyyy (HH:mm)", model.getChat_time()));
 
                 //chatMessage.setText(model.getChat_message());
-                //RETURN THE SPANNABLE TEXT HERE
 
                 String text = model.getChat_message();
 
@@ -200,24 +199,8 @@ public class CourseSubject extends AppCompatActivity{
 
                 time = item.getChat_video_stamp();
 
-                /*FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                YouTubeFragment fragmentRefresh = new YouTubeFragment();
-                fragmentRefresh = (YouTubeFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_youtube);
-                fragmentRefresh.setVideoId(lessonVidId, item.getChat_video_stamp());
+                fragment.onSeekTo(lessonVidId, item.getChat_video_stamp());
 
-                transaction.replace(R.id.fragment_youtube, fragmentRefresh).commit();*/
-
-                fragment.onRelease();
-
-                fragment = new YouTubeFragment();
-                fragment = (YouTubeFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_youtube);
-                fragment.setVideoId(lessonVidId, item.getChat_video_stamp());
-
-                //fragment.onSeekTo(lessonVidId, item.getChat_video_stamp());
-
-                /*fragment = new YouTubeFragment();
-                fragment = (YouTubeFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_youtube);
-                fragment.setVideoId(lessonVidId, item.getChat_video_stamp());*/
             }
         });
     }
