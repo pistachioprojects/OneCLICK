@@ -18,7 +18,8 @@ public class CourseOutline extends AppCompatActivity {
     private RecyclerView lessonRecycler;
     private Toolbar toolbar;
 
-    String dbChild;
+    String dbChild11;
+    String dbChild12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,29 +46,34 @@ public class CourseOutline extends AppCompatActivity {
 
         switch (crsBranch){
             case "CORE":
-                dbChild = "Grade11_Course_Lessons_CORE";
+                dbChild11 = "Grade11_Course_Lessons_CORE";
+                dbChild12 = "Grade12_Course_Lessons_CORE";
                 break;
             case "ABM":
-                dbChild = "Grade11_Course_Lessons_ABM";
+                dbChild11 = "Grade11_Course_Lessons_ABM";
+                dbChild12 = "Grade12_Course_Lessons_ABM";
                 break;
             case "HUMSS":
-                dbChild = "Grade11_Course_Lessons_HUMSS";
+                dbChild11 = "Grade11_Course_Lessons_HUMSS";
+                dbChild12 = "Grade12_Course_Lessons_HUMSS";
                 break;
             case "STEM":
-                dbChild = "Grade11_Course_Lessons_STEM";
+                dbChild11 = "Grade11_Course_Lessons_STEM";
+                dbChild12 = "Grade12_Course_Lessons_STEM";
                 break;
             case "GAS":
-                dbChild = "Grade11_Course_Lessons_GAS";
+                dbChild11 = "Grade11_Course_Lessons_GAS";
+                dbChild12 = "Grade12_Course_Lessons_GAS";
                 break;
         }
 
 
-        Log.d("COURSE OUTLINE", "=========================> "+crsId+", "+crsBranch+", "+dbChild);
+        Log.d("COURSE OUTLINE", "=========================> "+crsId+", "+crsBranch+", "+dbChild11);
 
         lessonRecycler = (RecyclerView) findViewById(R.id.course_outline_recycler);
         lessonRecycler.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        firebaseClient = new FirebaseLessonClient(this, dbChild, lessonRecycler, crsId);
+        firebaseClient = new FirebaseLessonClient(this, dbChild11, dbChild12, lessonRecycler, crsId);
         firebaseClient.refreshData();
 
     }

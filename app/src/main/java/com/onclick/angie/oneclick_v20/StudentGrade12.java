@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-public class StudentGrade11 extends AppCompatActivity {
+public class StudentGrade12 extends AppCompatActivity {
 
     ViewPager pager;
-    Grade11ViewPagerAdapter adapter;
+    Grade12ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
     CharSequence Titles[]={"STEM","ABM", "HUMSS", "GAS"};
     int Numboftabs = 4;
@@ -19,7 +19,7 @@ public class StudentGrade11 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_grade11);
+        setContentView(R.layout.activity_student_grade12);
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -29,14 +29,14 @@ public class StudentGrade11 extends AppCompatActivity {
         drawerFragment.setUp(R.id.fragment_student_drawer, (DrawerLayout) findViewById(R.id.student_drawer_layout), toolbar);
 
         // Creating The Grade11ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
-        adapter =  new Grade11ViewPagerAdapter(getSupportFragmentManager(),Titles,Numboftabs);
+        adapter =  new Grade12ViewPagerAdapter(getSupportFragmentManager(),Titles,Numboftabs);
 
         // Assigning ViewPager View and setting the adapter
-        pager = (ViewPager) findViewById(R.id.grade11_pager);
+        pager = (ViewPager) findViewById(R.id.grade12_pager);
         pager.setAdapter(adapter);
 
         // Assiging the Sliding Tab Layout View
-        tabs = (SlidingTabLayout) findViewById(R.id.grade11_tabs);
+        tabs = (SlidingTabLayout) findViewById(R.id.grade12_tabs);
         tabs.setDistributeEvenly(true); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
 
         // Setting Custom Color for the Scroll bar indicator of the Tab View

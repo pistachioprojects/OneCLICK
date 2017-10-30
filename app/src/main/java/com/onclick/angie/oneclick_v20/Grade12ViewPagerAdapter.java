@@ -1,23 +1,21 @@
 package com.onclick.angie.oneclick_v20;
 
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-
 /**
- * Created by Angie on 9/10/2017.
+ * Created by Angie on 10/28/2017.
  */
 
-public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+public class Grade12ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    CharSequence Titles[]; // This will Store the Titles of the Tabs which are Going to be passed when ViewPagerAdapter is created
-    int NumbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
+    CharSequence Titles[]; // This will Store the Titles of the Tabs which are Going to be passed when Grade11ViewPagerAdapter is created
+    int NumbOfTabs; // Store the number of tabs, this will also be passed when the Grade11ViewPagerAdapter is created
 
 
     // Build a Constructor and assign the passed Values to appropriate values in the class
-    public ViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabsumb) {
+    public Grade12ViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabsumb) {
         super(fm);
 
         this.Titles = mTitles;
@@ -31,22 +29,22 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         if(position == 0) // if the position is 0 we are returning the First tab
         {
-            BranchStem stem = new BranchStem();
+            Grade12BranchStem stem = new Grade12BranchStem();
             return stem;
         }
         else if(position == 1)             // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
         {
-            BranchAbm abm = new BranchAbm();
+            Grade12BranchAbm abm = new Grade12BranchAbm();
             return abm;
         }
         else if(position == 2)
         {
-            BranchHumss humss = new BranchHumss();
+            Grade12BranchHumss humss = new Grade12BranchHumss();
             return humss;
         }
         else
         {
-            BranchGas gas = new BranchGas();
+            Grade12BranchGas gas = new Grade12BranchGas();
             return gas;
         }
 
@@ -66,5 +64,4 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return NumbOfTabs;
     }
-
 }

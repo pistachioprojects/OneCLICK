@@ -20,31 +20,37 @@ import java.util.ArrayList;
 public class FirebaseLessonClient {
 
     Context context;
-    String dbChild;
+    String dbChild11;
+    String dbChild12;
     RecyclerView recycler;
     String parentId;
 
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference11;
+    DatabaseReference databaseReference12;
 
-    ArrayList<LessonItem> lessonItems=new ArrayList<>();
-    LessonItemAdapter itemAdapter;
+    ArrayList<LessonItem> lessonItems11=new ArrayList<>();
+    ArrayList<LessonItem> lessonItems12=new ArrayList<>();
+    LessonItemAdapter itemAdapter11;
+    LessonItemAdapter itemAdapter12;
 
-    public FirebaseLessonClient(Context context, String dbChild, RecyclerView recycler, String parentId) {
+    public FirebaseLessonClient(Context context, String dbChild11, String dbChild12, RecyclerView recycler, String parentId) {
         this.context = context;
-        this.dbChild = dbChild;
+        this.dbChild11 = dbChild11;
+        this.dbChild12 = dbChild12;
         this.recycler = recycler;
         this.parentId = parentId;
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference(this.dbChild);
+        //firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference11 = FirebaseDatabase.getInstance().getReference(this.dbChild11);
+        databaseReference12 = FirebaseDatabase.getInstance().getReference(this.dbChild12);
     }
 
     public void refreshData(){
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference11.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(com.google.firebase.database.DataSnapshot dataSnapshot) {
-                getUpdates(dataSnapshot);
+                getUpdates11(dataSnapshot);
             }
 
             @Override
@@ -52,10 +58,25 @@ public class FirebaseLessonClient {
                 Toast.makeText(context, "ERROR", Toast.LENGTH_SHORT).show();
             }
         });
+
+       databaseReference12.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(com.google.firebase.database.DataSnapshot dataSnapshot) {
+                getUpdates12(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(context, "ERROR", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
     }
 
-    private void getUpdates(DataSnapshot dataSnapshot){
-        lessonItems.clear();
+    private void getUpdates11(DataSnapshot dataSnapshot){
+        lessonItems11.clear();
         for(DataSnapshot ds : dataSnapshot.getChildren()){
             if(ds.getValue(LessonItem.class).getLesson_parent_id().equals(parentId)){
                 LessonItem lesson = new LessonItem();
@@ -66,16 +87,41 @@ public class FirebaseLessonClient {
 
                 Log.d("COURSE RETRIEVED", "=========================> "+ds.getValue(LessonItem.class).getLesson_description());
 
-                lessonItems.add(lesson);
+                lessonItems11.add(lesson);
             }
         }
 
-        if(lessonItems.size()>0){
-            itemAdapter = new LessonItemAdapter(context, lessonItems);
-            recycler.setAdapter(itemAdapter);
+        if(lessonItems11.size()>0){
+            itemAdapter11 = new LessonItemAdapter(context, lessonItems11);
+            recycler.setAdapter(itemAdapter11);
         }
-        else{
+        /*else{
             Toast.makeText(context, "NO DATA TO SHOW!", Toast.LENGTH_LONG).show();
+        }*/
+    }
+
+    private void getUpdates12(DataSnapshot dataSnapshot){
+        lessonItems12.clear();
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+            if(ds.getValue(LessonItem.class).getLesson_parent_id().equals(parentId)){
+                LessonItem lesson = new LessonItem();
+                lesson.setLesson_id(ds.getValue(LessonItem.class).getLesson_id());
+                lesson.setLesson_description(ds.getValue(LessonItem.class).getLesson_description());
+                lesson.setLesson_number(ds.getValue(LessonItem.class).getLesson_number());
+                lesson.setLesson_video_id(ds.getValue(LessonItem.class).getLesson_video_id());
+
+                Log.d("COURSE RETRIEVED", "=========================> "+ds.getValue(LessonItem.class).getLesson_description());
+
+                lessonItems12.add(lesson);
+            }
         }
+
+        if(lessonItems12.size()>0){
+            itemAdapter12 = new LessonItemAdapter(context, lessonItems12);
+            recycler.setAdapter(itemAdapter12);
+        }
+        /*else{
+            Toast.makeText(context, "NO DATA TO SHOW!", Toast.LENGTH_LONG).show();
+        }*/
     }
 }

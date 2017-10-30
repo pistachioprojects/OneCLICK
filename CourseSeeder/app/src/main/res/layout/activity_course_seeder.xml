@@ -54,54 +54,54 @@
             android:textAllCaps="true"
             android:textColor="#E8F5E9" />
         <Button
-            android:id="@+id/seedg11lessons"
+            android:id="@+id/seedg12lessons"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_margin="8dp"
             android:background="@color/colorPrimary"
-            android:onClick="seedGrade11Lessons"
-            android:text="Seed Course Grade 11 Lessons - CORE"
+            android:onClick="seedGrade12Lessons"
+            android:text="Seed Course Grade 12 Lessons - CORE"
             android:textAllCaps="true"
             android:textColor="#E8F5E9" />
 
         <Button
-            android:id="@+id/seedg11lessonsabm"
+            android:id="@+id/seedg12lessonsabm"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_margin="8dp"
             android:background="@color/colorPrimary"
-            android:onClick="seedGrade11LessonsAbm"
-            android:text="Seed Course Grade 11 Lessons - ABM"
+            android:onClick="seedGrade12LessonsAbm"
+            android:text="Seed Course Grade 12 Lessons - ABM"
             android:textAllCaps="true"
             android:textColor="#E8F5E9" />
         <Button
-            android:id="@+id/seedg11lessonshumss"
+            android:id="@+id/seedg12lessonshumss"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_margin="8dp"
             android:background="@color/colorPrimary"
-            android:onClick="seedGrade11LessonsHumss"
-            android:text="Seed Course Grade 11 Lessons - HUMSS"
+            android:onClick="seedGrade12LessonsHumss"
+            android:text="Seed Course Grade 12 Lessons - HUMSS"
             android:textAllCaps="true"
             android:textColor="#E8F5E9" />
         <Button
-            android:id="@+id/seedg11lessonsstem"
+            android:id="@+id/seedg12lessonsstem"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_margin="8dp"
             android:background="@color/colorPrimary"
-            android:onClick="seedGrade11LessonsStem"
-            android:text="Seed Course Grade 11 Lessons - STEM"
+            android:onClick="seedGrade12LessonsStem"
+            android:text="Seed Course Grade 12 Lessons - STEM"
             android:textAllCaps="true"
             android:textColor="#E8F5E9" />
         <Button
-            android:id="@+id/seedg11lessonsgas"
+            android:id="@+id/seedg12lessonsgas"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_margin="8dp"
             android:background="@color/colorPrimary"
-            android:onClick="seedGrade11LessonsGas"
-            android:text="Seed Course Grade 11 Lessons - GAS"
+            android:onClick="seedGrade12LessonsGas"
+            android:text="Seed Course Grade 12 Lessons - GAS"
             android:textAllCaps="true"
             android:textColor="#E8F5E9" />
 

@@ -72,6 +72,10 @@ public class StudentHome extends AppCompatActivity{
         startActivity(new Intent(this, StudentGrade11.class));
     }
 
+    public void redirectGrade12 (View view){
+        startActivity(new Intent(this, StudentGrade12.class));
+    }
+
     public void showFaqInfo (View view){
         Dialog faq = new Dialog(this);
         faq.setTitle("Senior High School Information");

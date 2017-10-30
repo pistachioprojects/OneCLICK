@@ -2,21 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/grade11slider_template">
+    android:id="@+id/grade12slider_template">
 
     <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar" />
 
     <com.onclick.angie.oneclick_v20.SlidingTabLayout
-        android:id="@+id/grade11_tabs"
+        android:id="@+id/grade12_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
         android:background="@color/colorPrimary"/>
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/grade11_pager"
+        android:id="@+id/grade12_pager"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="1"

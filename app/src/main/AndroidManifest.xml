@@ -22,7 +22,8 @@
         <activity android:name=".StudentGrade11" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".CourseSubject" />
-        <activity android:name=".CourseOutline"/>
+        <activity android:name=".CourseOutline" />
+        <activity android:name=".StudentGrade12"></activity>
     </application>
 
 </manifest>

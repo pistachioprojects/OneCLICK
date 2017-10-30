@@ -291,61 +291,6 @@ public class CourseSeederActivity extends AppCompatActivity {
      //   clearText();
     }
 
-    public void seedGrade12(View view){
-
-        databaseCourses = FirebaseDatabase.getInstance().getReference("Grade12_Courses");
-
-        /*String title = cTitle.getText().toString();
-        String description = cDescription.getText().toString();
-        String image = cImage.getText().toString();
-        String vidlink = cVideolink.getText().toString();
-        int enrolleecount = Integer.parseInt(cEcount.getText().toString());
-        String availability = cAvailability.getSelectedItem().toString(); */
-
-        id = databaseCourses.push().getKey();
-        title = "Philosophy";
-        description = "This module discusses about world philisophies";
-        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/philosophy.jpg?alt=media&token=265a205a-1dff-4116-9b6f-a6d37dd713b2";
-        videoid = "1A_CAkYt3GY";
-        availability = "Not Offered this Semester";
-        branch = "GAS";
-        course = new CourseInfo(id, title, description, image, availability, branch);
-        databaseCourses.child(id).setValue(course);
-
-        id = databaseCourses.push().getKey();
-        title = "Science";
-        description = "This module discusses about General Science";
-        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/science.jpg?alt=media&token=1cd3fbb0-5490-4caf-aab4-539dc67a9a6c";
-        videoid = "T20RT0GgOB4";
-        availability = "Offered this Semester";
-        branch = "STEM";
-        course = new CourseInfo(id, title, description, image, availability, branch);
-        databaseCourses.child(id).setValue(course);
-
-        id = databaseCourses.push().getKey();
-        title = "General Mathematics";
-        description = "This module develops the student's logical skills in problem solving";
-        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/mathematics.jpg?alt=media&token=05b745bc-9f6b-421c-ac46-195323f8a639";
-        videoid = "osoVKtmHQpQ";
-        availability = "Offered this Semester";
-        branch = "STEM";
-        course = new CourseInfo(id, title, description, image, availability, branch);
-        databaseCourses.child(id).setValue(course);
-
-
-        toasterMessage("Successful!");
-    //    clearText();
-    }
-/*
-    public void clearText(){
-        cTitle.setText("");
-        cDescription.setText("");
-        cImage.setText("");
-        cVideolink.setText("");
-        cEcount.setText("");
-    }
-*/
-
     public void seedGrade11Lessons(View view) {
         databaseLessons = FirebaseDatabase.getInstance().getReference("Grade11_Course_Lessons_CORE");
 
@@ -1320,6 +1265,729 @@ public class CourseSeederActivity extends AppCompatActivity {
 
     }
 
+
+    public void seedGrade12(View view){
+
+        databaseCourses = FirebaseDatabase.getInstance().getReference("Grade12_Courses");
+
+        /*String title = cTitle.getText().toString();
+        String description = cDescription.getText().toString();
+        String image = cImage.getText().toString();
+        String vidlink = cVideolink.getText().toString();
+        int enrolleecount = Integer.parseInt(cEcount.getText().toString());
+        String availability = cAvailability.getSelectedItem().toString(); */
+
+        id = databaseCourses.push().getKey();
+        title = "Personal Development";
+        description = "This module discusses about personal development.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fsports.png?alt=media&token=96265256-5c89-41a5-8a0c-36f0f5a98185";
+        availability = "Offered this Semester";
+        branch = "CORE";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+
+
+        id = databaseCourses.push().getKey();
+        title = "Understanding Culture, Society, and Politics";
+        description = "This module discusses about social sciences.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fsocscience.png?alt=media&token=5531b643-6f2a-4512-a1ed-e750d76993ff";
+        availability = "Offered this Semester";
+        branch = "CORE";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+
+        id = databaseCourses.push().getKey();
+        title = "Earth Science";
+        description = "This module discusses about earth science";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fscience.png?alt=media&token=cb60013c-0fe9-4b67-af7d-a0ed916008f9";
+        availability = "Offered this Semester";
+        branch = "CORE";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+
+        id = databaseCourses.push().getKey();
+        title = "Disaster Readiness and Risk Reduction";
+        description = "This module develops the student's readiness in calamities.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Ftechvoc.png?alt=media&token=1761ea95-e0ac-43a5-9310-61b39f421ac3";
+        availability = "Offered this Semester";
+        branch = "CORE";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+
+        id = databaseCourses.push().getKey();
+        title = "Organization and Management";
+        description = "This module develops the student's business organization.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fsocscience.png?alt=media&token=5531b643-6f2a-4512-a1ed-e750d76993ff";
+        availability = "Offered this Semester";
+        branch = "ABM";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+
+        id = databaseCourses.push().getKey();
+        title = "Principles of Marketing";
+        description = "This module discusses about the principles of marketing.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fmathematics.png?alt=media&token=089737a2-733a-4303-863e-9c523c3aa3fa";
+        availability = "Offered this Semester";
+        branch = "ABM";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+
+        id = databaseCourses.push().getKey();
+        title = "Disciplines and Ideas in the Applied Social Sciences";
+        description = "This module discusses about the ideas in applied social sciences.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fsocscience.png?alt=media&token=5531b643-6f2a-4512-a1ed-e750d76993ff";
+        availability = "Offered this Semester";
+        branch = "HUMSS";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+
+        id = databaseCourses.push().getKey();
+        title = "General Biology 2";
+        description = "This module discusses deeper about Biology.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fscience.png?alt=media&token=cb60013c-0fe9-4b67-af7d-a0ed916008f9";
+        availability = "Offered this Semester";
+        branch = "STEM";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+
+        id = databaseCourses.push().getKey();
+        title = "General Physics 2";
+        description = "This module discusses deeper about Physics.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fscience.png?alt=media&token=cb60013c-0fe9-4b67-af7d-a0ed916008f9";
+        availability = "Offered this Semester";
+        branch = "STEM";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+
+        id = databaseCourses.push().getKey();
+        title = "General Chemistry 2";
+        description = "This module discusses deeper about Chemistry.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fscience.png?alt=media&token=cb60013c-0fe9-4b67-af7d-a0ed916008f9";
+        availability = "Offered this Semester";
+        branch = "STEM";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+        toasterMessage("Successful!");
+
+
+        id = databaseCourses.push().getKey();
+        title = "Humanities 2";
+        description = "This module discusses deeper about Humanities.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fhumanities.png?alt=media&token=9133b1e0-772a-42c9-b7ae-26124cf1771b";
+        availability = "Offered this Semester";
+        branch = "GAS";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+        toasterMessage("Successful!");
+
+        id = databaseCourses.push().getKey();
+        title = "Social Science 1";
+        description = "This module discusses about basics of Social Science.";
+        image = "https://firebasestorage.googleapis.com/v0/b/oneclick-2ca2a.appspot.com/o/Course_Icons%2Fsocscience.png?alt=media&token=5531b643-6f2a-4512-a1ed-e750d76993ff";
+        availability = "Offered this Semester";
+        branch = "GAS";
+        course = new CourseInfo(id, title, description, image, availability, branch);
+        databaseCourses.child(id).setValue(course);
+        toasterMessage("Successful!");
+        //    clearText();
+    }
+
+    public void seedGrade12Lessons(View view) {
+        databaseLessons = FirebaseDatabase.getInstance().getReference("Grade12_Course_Lessons_CORE");
+
+        //PERSONAL DEVELOPMENT --------------------------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Knowing Oneself";
+        lessonVideoId = "7LsSXeyHgEE";
+        lessonParentId = "-KxVxwOijZ_9Nn_pESZx";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Developing the Whole Person";
+        lessonVideoId = "aQidnt85xcw";
+        lessonParentId = "-KxVxwOijZ_9Nn_pESZx";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Developmental Stages in Middle and Late Adolescence";
+        lessonVideoId = "gcMCtOJCkCE";
+        lessonParentId = "-KxVxwOijZ_9Nn_pESZx";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "The Powers of the Mind";
+        lessonVideoId = "sp3U8kj86TM";
+        lessonParentId = "-KxVxwOijZ_9Nn_pESZx";
+        lessonNum = 4;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Emotional Intelligence";
+        lessonVideoId = "LgUCyWhJf6s";
+        lessonParentId = "-KxVxwOijZ_9Nn_pESZx";
+        lessonNum = 5;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Personal Relationships";
+        lessonVideoId = "nFWXNcGo5V8";
+        lessonParentId = "-KxVxwOijZ_9Nn_pESZx";
+        lessonNum = 6;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Family Structures and Legacies";
+        lessonVideoId = "yHvaKv9N0VE";
+        lessonParentId = "-KxVxwOijZ_9Nn_pESZx";
+        lessonNum = 7;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        //UNDERSTANDING CULTURE, SOCIETY, AND POLITICS --------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Starting Points for the Understanding of Culture, Society, and Politics";
+        lessonVideoId = "Abl5apX3Ex4";
+        lessonParentId = "-KxVxwOpTQ-Nf1Qt656d";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Defining Culture and Society from the Perspectives of Anthropology and Sociology";
+        lessonVideoId = "VpiIlemQK8o";
+        lessonParentId = "-KxVxwOpTQ-Nf1Qt656d";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Looking back at Human Biocultural and Social Evolution";
+        lessonVideoId = "xlmruDxY48Y";
+        lessonParentId = "-KxVxwOpTQ-Nf1Qt656d";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "How Society is Organized";
+        lessonVideoId = "rkL3T-mjjho";
+        lessonParentId = "-KxVxwOpTQ-Nf1Qt656d";
+        lessonNum = 4;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Cultural, Social and Political Institutions";
+        lessonVideoId = "iUVxCw_9z2U";
+        lessonParentId = "-KxVxwOpTQ-Nf1Qt656d";
+        lessonNum = 5;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Social and Political Stratification";
+        lessonVideoId = "ja6MPh088II";
+        lessonParentId = "-KxVxwOpTQ-Nf1Qt656d";
+        lessonNum = 6;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        //EARTH SCIENCE ---------------------------------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Origin and Structure of the Earth";
+        lessonVideoId = "VYJoQ5S5NnI";
+        lessonParentId = "-KxVxwOqkDbXRwzt2V50";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Earth Materials and Systems";
+        lessonVideoId = "EH1kat51jJY";
+        lessonParentId = "-KxVxwOqkDbXRwzt2V50";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Natural Hazards, Mitigation, and Adaptation";
+        lessonVideoId = "mZ8pqBQfebM";
+        lessonParentId = "-KxVxwOqkDbXRwzt2V50";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        //DISASTER READINESS AND RISK REDUCTION ---------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Basic Concept of Disaster and Disaster Risk";
+        lessonVideoId = "y16aMLeh91Q";
+        lessonParentId = "-KxVxwOrq2WYDm0ZTAcs";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Exposure and Vulnerability";
+        lessonVideoId = "ypmiQLLS8sE";
+        lessonParentId = "-KxVxwOrq2WYDm0ZTAcs";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Basic Concept of Hazard";
+        lessonVideoId = "-jUp_zsKp7k";
+        lessonParentId = "-KxVxwOrq2WYDm0ZTAcs";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Earthquake Hazards";
+        lessonVideoId = "Py9k7dacoKo";
+        lessonParentId = "-KxVxwOrq2WYDm0ZTAcs";
+        lessonNum = 4;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Volcano Hazards";
+        lessonVideoId = "BCm6xTZj-vk";
+        lessonParentId = "-KxVxwOrq2WYDm0ZTAcs";
+        lessonNum = 5;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Hydro Meteorological Hazards";
+        lessonVideoId = "lzDyI_VhGy0";
+        lessonParentId = "-KxVxwOrq2WYDm0ZTAcs";
+        lessonNum = 6;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Fire Hazard";
+        lessonVideoId = "8hNegmLacMc";
+        lessonParentId = "-KxVxwOrq2WYDm0ZTAcs";
+        lessonNum = 7;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Concept of Disaster Risk Reduction (DRR) and Disaster Risk Reduction and Management (DRRM)";
+        lessonVideoId = "D4cDePpQUrM";
+        lessonParentId = "-KxVxwOrq2WYDm0ZTAcs";
+        lessonNum = 8;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        toasterMessage("Successful Seeding Lessons!");
+
+    }
+
+    public void seedGrade12LessonsAbm(View view){
+        databaseLessons = FirebaseDatabase.getInstance().getReference("Grade12_Course_Lessons_ABM");
+
+        //ORGANIZATION AND MANAGEMENT -------------------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Nature and Concept of Management";
+        lessonVideoId = "gZCnsMV0p-4";
+        lessonParentId = "-KxVxwOtFOiOJ4aB2nhJ";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "The Firm and Its Environment";
+        lessonVideoId = "MB3PJubQdro";
+        lessonParentId = "-KxVxwOtFOiOJ4aB2nhJ";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Planning";
+        lessonVideoId = "k2oZ-vPg3Pg";
+        lessonParentId = "-KxVxwOtFOiOJ4aB2nhJ";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Organizing";
+        lessonVideoId = "3yVsOSbbPhc";
+        lessonParentId = "-KxVxwOtFOiOJ4aB2nhJ";
+        lessonNum = 4;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Staffing";
+        lessonVideoId = "s4JYhIAt8iE";
+        lessonParentId = "-KxVxwOtFOiOJ4aB2nhJ";
+        lessonNum = 5;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Leading";
+        lessonVideoId = "YeutF6puazw";
+        lessonParentId = "-KxVxwOtFOiOJ4aB2nhJ";
+        lessonNum = 6;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Controlling";
+        lessonVideoId = "J_TqI2PqF8g";
+        lessonParentId = "-KxVxwOtFOiOJ4aB2nhJ";
+        lessonNum = 7;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Introduction to the Different Functional Areas of Management";
+        lessonVideoId = "JH4srpPMgAc";
+        lessonParentId = "-KxVxwOtFOiOJ4aB2nhJ";
+        lessonNum = 8;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        //PRINCIPLES OF MARKETING -----------------------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Marketing Principles and Strategies";
+        lessonVideoId = "hZLMv5aexto";
+        lessonParentId = "-KxVxwOuppV0XfaQgNpf";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Customer Relationship: Customer Service";
+        lessonVideoId = "PKoZbFN4KSY";
+        lessonParentId = "-KxVxwOuppV0XfaQgNpf";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Market Opportunity Analysis and Consumer Analysis";
+        lessonVideoId = "CHh49_ZtY8I";
+        lessonParentId = "-KxVxwOuppV0XfaQgNpf";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Developing the Marketing Mix";
+        lessonVideoId = "7SSu0KtXI2c";
+        lessonParentId = "-KxVxwOuppV0XfaQgNpf";
+        lessonNum = 4;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Managing the Marketing Effort (The Marketing Process)";
+        lessonVideoId = "xyb5Edfpw5U";
+        lessonParentId = "-KxVxwOuppV0XfaQgNpf";
+        lessonNum = 5;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        toasterMessage("Successful Seeding Lessons!");
+    }
+
+    public void seedGrade12LessonsHumss(View view){
+        databaseLessons = FirebaseDatabase.getInstance().getReference("Grade12_Course_Lessons_HUMSS");
+
+
+        //DISCIPLINES AND IDEAS IN APPLIED SOCIAL SCIENCES ----------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Counseling";
+        lessonVideoId = "xrC9HYYaTz4";
+        lessonParentId = "-KxVxwOuppV0XfaQgNpg";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Social Work";
+        lessonVideoId = "oKbj3y-LUbw";
+        lessonParentId = "-KxVxwOuppV0XfaQgNpg";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Communication";
+        lessonVideoId = "S7CN9Trw43w";
+        lessonParentId = "-KxVxwOuppV0XfaQgNpg";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Importance of Social Sciences";
+        lessonVideoId = "r78sZTAhYbE";
+        lessonParentId = "-KxVxwOuppV0XfaQgNpg";
+        lessonNum = 4;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+
+        toasterMessage("Successful Seeding Lessons!");
+
+    }
+
+    public void seedGrade12LessonsStem(View view){
+        databaseLessons = FirebaseDatabase.getInstance().getReference("Grade12_Course_Lessons_STEM");
+
+
+        //GENERAL PHYSICS 2 -----------------------------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Vectors";
+        lessonVideoId = "ml4NSzCQobk";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Kinematics: Motion Along a Straight Line";
+        lessonVideoId = "EhsEIRAImM8";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Kinematics: Motion in 2- Dimensions and 3- Dimensions";
+        lessonVideoId = "h9Ipz-7rKu0";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Newton’s Laws of Motion and Applications";
+        lessonVideoId = "kKKM8Y-u7ds";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 4;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Work, Energy, and Energy Conservation";
+        lessonVideoId = "kw_4Loo1HR4";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 5;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Center of Mass, Momentum, Impulse, and Collisions";
+        lessonVideoId = "VrflZifKIuw";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 6;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Gravity";
+        lessonVideoId = "Xcel427Ezl0";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 7;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Periodic Motion ";
+        lessonVideoId = "D6oVrp2QTKM";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 8;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Mechanical Waves and Sound";
+        lessonVideoId = "c38H6UKt3_I";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 9;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Fluid Mechanics";
+        lessonVideoId = "5JG_P6ixaaE";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 10;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Temperature and Heat";
+        lessonVideoId = "LL54E5CzQ-A";
+        lessonParentId = "-KxVxwOwa9LYdN1uS7fv";
+        lessonNum = 11;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+
+        //GENERAL BIOLOGY 2 -----------------------------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Cell";
+        lessonVideoId = "8IlzKri08kk";
+        lessonParentId = "-KxVxwOvQTAYQQFGoeoQ";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Biological Molecules";
+        lessonVideoId = "FgfknBZaVTI";
+        lessonParentId = "-KxVxwOvQTAYQQFGoeoQ";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Energy Transformation";
+        lessonVideoId = "-8atIc3XixY";
+        lessonParentId = "-KxVxwOvQTAYQQFGoeoQ";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        //GENERAL CHEMISTRY 2 ---------------------------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Matter and its Properties";
+        lessonVideoId = "AR_F7IGgjkM";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Measurements";
+        lessonVideoId = "pFl49nIGQF8";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 2;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Atoms, Molecules, and Ions";
+        lessonVideoId = "pSJeMJaCkVU";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 3;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Stoichiometry";
+        lessonVideoId = "SjQG3rKSZUQ";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 4;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Gases";
+        lessonVideoId = "gmN2fRlQFp4";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 5;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Electronic Structure of Atoms";
+        lessonVideoId = "yBrp8uvNAhI";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 6;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Electronic Structure and Periodicity";
+        lessonVideoId = "2AFPfg0Como";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 7;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Chemical Bonding: Ionic Bonds";
+        lessonVideoId = "DEdRcfyYnSQ";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 8;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Chemical Bonding: Covalent Bonds";
+        lessonVideoId = "LkAykOv1foc";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 9;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Organic Compounds";
+        lessonVideoId = "0WAV47hsCpY";
+        lessonParentId = "-KxVxwOx83FcnBih_Idm";
+        lessonNum = 10;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        toasterMessage("Successful Seeding Lessons!");
+    }
+
+    public void seedGrade12LessonsGas(View view){
+        databaseLessons = FirebaseDatabase.getInstance().getReference("Grade12_Course_Lessons_GAS");
+
+        //HUMANITIES 2 ----------------------------------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Introduction to Humanities 2";
+        lessonVideoId = "oZjiraM3vSs";
+        lessonParentId = "-KxVxwPStGm_NwUAzu6y";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        //SOCIAL SCIENCE 1 -----------------------------------------------------------------------
+
+        lessonId = databaseLessons.push().getKey();
+        lessonTitle = "Introduction to Social Science 1";
+        lessonVideoId = "r78sZTAhYbE";
+        lessonParentId = "-KxVxwPU8HG_Ij0Q5R2i";
+        lessonNum = 1;
+        lesson = new LessonInfo(lessonId, lessonTitle, lessonVideoId, lessonParentId, lessonNum);
+        databaseLessons.child(lessonId).setValue(lesson);
+
+        toasterMessage("Successful Seeding Lessons!");
+
+    }
 
 
     public void toasterMessage(String message){

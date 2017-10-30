@@ -14,14 +14,14 @@ import android.view.ViewGroup;
  * Created by Angie on 9/10/2017.
  */
 
-public class BranchAbm extends Fragment {
+public class Grade11BranchAbm extends Fragment {
 
     private RecyclerView recyclerView;
     private CourseItemShowAdapter adapter;
 
     FirebaseClient firebaseClient;
 
-    public BranchAbm() {
+    public Grade11BranchAbm() {
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
